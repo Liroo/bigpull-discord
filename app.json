@@ -1,0 +1,7 @@
+{
+  "name": "Big Pull Discord Bot",
+  "description": "Big Pull Discord Bot",
+  "repository": "https://github.com/liroo/bigpull-discord",
+  "keywords": ["node", "heroku"],
+  "image": "heroku/nodejs"
+}

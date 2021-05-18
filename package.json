@@ -1,0 +1,28 @@
+{
+  "name": "bigpull-discord",
+  "version": "1.0.0",
+  "description": "The Discord bot for Big Pull",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "npm run lint && npm run compile",
+    "compile": "tsc --build tsconfig.json",
+    "lint": "eslint . --ignore-path .gitignore --ext .ts",
+    "lint:fix": "eslint . --ignore-path .gitignore --ext .ts --fix",
+    "start": "tsc && node dist/main.js",
+    "start:dev": "tsc -w & nodemon -q -w dist dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^15.3.0",
+    "discord.js": "^12.5.3",
+    "dotenv": "^9.0.2",
+    "puppeteer": "^9.1.1",
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4"
+  },
+  "devDependencies": {
+    "eslint": "^7.26.0",
+    "nodemon": "^2.0.7"
+  }
+}
