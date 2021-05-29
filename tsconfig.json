@@ -1,20 +1,18 @@
 {
 	"compilerOptions": {
 		"baseUrl": "./src",
-		"target": "ES2019",
+		"target": "es6",
 		"module": "commonjs",
-		"strict": true,
 		"outDir": "dist",
+		"sourceMap": true,
 		"esModuleInterop": true,
-		"allowSyntheticDefaultImports": true,
-		"experimentalDecorators": true,
-		"emitDecoratorMetadata": true,
-		"skipLibCheck": true,
-		"noEmitHelpers": true,
-		"importHelpers": true,
-		"resolveJsonModule": true,
-		"typeRoots": ["node_modules/@types", "typings/index.d.ts"]
+		"experimentalDecorators": true
 	},
-	"exclude": [],
-	"include": ["src/**/*"]
+	"include": [
+		"src/**/*.ts"
+	],
+	"exclude": [
+		"node_modules",
+		".vscode"
+	]
 }

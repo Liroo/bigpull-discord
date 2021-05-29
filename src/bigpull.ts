@@ -15,10 +15,10 @@ export default class BigPull {
     this._loadCommands();
     this._loadEvents();
 
-    this._client.login(process.env.DISCORD_BOT_TOKEN);
+    this._client.login(global.__ENV__.DISCORD_BOT_TOKEN);
   }
 
-  _loadCommands(): void {
+  private _loadCommands(): void {
     const commandsFiles: string[] = getFilesSync(`${__dirname}/commands/`);
 
     for (const file of commandsFiles) {
@@ -29,7 +29,7 @@ export default class BigPull {
     }
   }
 
-  _loadEvents(): void {
+  private _loadEvents(): void {
     const eventFiles: string[] = getFilesSync(`${__dirname}/events/`);
 
     for (const file of eventFiles) {
@@ -37,9 +37,9 @@ export default class BigPull {
       const name = file.slice(file.lastIndexOf('/') + 1, file.length - 3);
 
       if (event.once) {
-        this._client.once(name, (...args) => event.exec(...args));
+        this._client.once(name, async (...args) => await event.exec(...args));
       } else {
-        this._client.on(name, (...args) => event.exec(...args));
+        this._client.on(name, async (...args) => await event.exec(...args));
       }
     }
   }

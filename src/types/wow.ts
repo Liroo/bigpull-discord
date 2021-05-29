@@ -13,3 +13,8 @@ export enum WowClass {
   DeathKnight = 'death_knight',
   All = 'all'
 }
+
+export interface WowCharacter {
+  name: string;
+  server: string;
+}

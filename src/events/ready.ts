@@ -4,7 +4,7 @@ import { Client } from "discord.js";
 export default class ReadyEvent extends BaseEvent {
   public once: boolean = true;
 
-  exec() {
+  public async exec() {
     console.log('Ready !');
   }
 }

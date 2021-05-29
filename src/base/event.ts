@@ -1,6 +1,6 @@
 import BigPull from "bigpull";
 
-export default class BaseEvent  {
+export default abstract class BaseEvent  {
   protected _bigpull: BigPull;
   public once: boolean = false;
 
@@ -8,5 +8,5 @@ export default class BaseEvent  {
     this._bigpull = bigpull;
   }
 
-  exec(...args: any[]): void {}
+  public abstract exec(...args: any[]): Promise<void>;
 }
